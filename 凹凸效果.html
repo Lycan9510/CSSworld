@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="description" content="“首选最小宽度”与凹凸效果" />
+    <title>“首选最小宽度”与凹凸效果</title>
+    <style>
+        .ao,
+        .tu {
+          display: inline-block;
+          width: 0;
+          font-size: 14px;
+          line-height: 18px;
+          margin: 35px;
+          color: #fff;
+        }
+        .ao:before,
+        .tu:before {
+          outline: 2px solid #cd0000;
+          font-family: Consolas, Monaco, monospace;
+        }
+        .ao:before {
+          content: "love你love";
+        }
+        .tu {
+          direction: rtl;
+        }
+        .tu:before {
+          content: "我love你";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+    	<h1>“首选最小宽度”与凹凸效果</h1>
+        <div class="demo">
+            <span class="ao"></span>
+            <span class="tu"></span>
+        </div>
+    </div>
+</body>
+</html> 

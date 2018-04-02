@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="description" content="inline-table内联表格特性展示" />
+    <title>inline-table内联表格特性展示</title>
+    <style>
+    .constr {
+        padding: 40px 0;
+    }
+
+    .inline-table {
+        display: inline-table;
+        width: 128px;
+        margin-left: 10px;
+        border: 1px solid #cad5eb;
+    }
+    .inline-table > p {
+        display: table-cell;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+    	<h1>inline-table内联表格特性展示</h1>
+        <div class="demo"> 
+            <div class="constr">
+                和文字平起平坐的表格：
+                <div class="inline-table">
+                    <p>第1列</p>
+                    <p>第2列</p>
+                </div>
+            </div>  
+        </div>
+    </div>
+</body>
+</html> 

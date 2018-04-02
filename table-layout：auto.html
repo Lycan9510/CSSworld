@@ -1,0 +1,44 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="table-layout:auto的表格的一柱擎天现象" />
+    <title>table-layout:auto的表格的一柱擎天现象</title>
+    <style>
+        .constr {
+            width: calc(100% - 40px);
+            max-width: 360px;
+            margin: 0 auto;
+        }
+        table {
+            width: 280px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        td {
+            border: solid 1px #000;
+        }
+    </style>
+</head>
+
+<body>
+<div class="main">
+	<h1>table-layout:auto的表格的一柱擎天现象</h1>
+    <div class="demo">        
+        <div class="constr">
+            <table>
+                <tr>
+                    <td>就1列就1列就1列就1列就1列</td>
+                    <td>当父级relative，且宽度很小的时候，例如{position:relative; width:20px;}，absolute元素也会出现一柱擎天的情况；</td>
+                    <td>当父级relative，且宽度很小的时候，例如{position:relative; width:20px;}，absolute元素也会出现一柱擎天的情况</td>
+                </tr>
+            </table>
+        </div>  
+    </div>
+</div>
+</body>
+</html> 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="description" content="block水平元素与清除浮动" />
+    <title>block水平元素与清除浮动</title>
+    <style>
+    .constr {
+        width: 276px;
+        margin: 10px auto;
+        text-align: left;
+    }
+    .constr:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .constr > h6 {
+        margin: 1em 0 .5em;
+        font-weight: bold;
+    }
+    .box {
+        padding: 10px;
+        background-color: #cd0000;
+    }
+    .box > img {
+        float: left;
+    }
+
+    .box:after {
+        content: "";
+        clear: both;
+    }
+
+    .clear-block:after {
+        display: block;
+    }
+    .clear-table:after {
+        display: table;
+    }
+    .clear-list-item:after {
+        display: list-item;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+    	<h1>block水平元素与清除浮动实例页面</h1>
+        <div class="demo"> 
+            <div class="constr">
+                <h3>display: block;</h3>
+                <div id="box" class="box clear-block">
+                    <img src="./img/1.jpg" width="256" height="192">
+                </div>
+            </div>
+            <div class="constr">
+                <h3>display: table;</h3>
+                <div id="box" class="box clear-table">
+                    <img src="./img/1.jpg" width="256" height="192">
+                </div>
+            </div>
+             <div class="constr">
+                <h3>display: list-item;</h3>
+                <div id="box" class="box clear-list-item">
+                    <img src="./img/1.jpg" width="256" height="192">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
