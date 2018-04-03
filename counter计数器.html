@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="CSS计数器counter" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="lycan" />
+  <title>CSS计数器counter</title>
+  <style>
+    .counter {
+      font-size: 32px; 
+      font-family: arial black; 
+      color: #cd0000; 
+    }
+
+    .counter1 {
+      counter-reset: wangxiaoer 2;  
+    }
+    .counter1:before { 
+      content: counter(wangxiaoer); 
+    }
+    
+    .counter2 {
+      counter-reset: wangxiaoer 2 wangxiaoson 3;  
+    }
+    .counter2:before {
+      content: counter(wangxiaoer);
+    }
+    .counter2:after {
+      content: counter(wangxiaoson);
+    }
+    
+    .counter3 {
+      counter-reset: wangxiaoer 2; 
+      counter-increment: wangxiaoer; 
+    }
+    .counter3:before { 
+      content: counter(wangxiaoer); 
+    }
+
+    .counter4 {
+      counter-reset: wangxiaoer 2;  
+    }
+    .counter4:before { 
+      content: counter(wangxiaoer);
+      counter-increment: wangxiaoer; 
+    }
+
+    .counter5 {
+      counter-reset: wangxiaoer 2; 
+    }
+    .counter5:before,
+    .counter5:after { 
+      content: counter(wangxiaoer);
+      counter-increment: wangxiaoer; 
+    }
+
+    .counter6 {
+      counter-reset: wangxiaoer 2; 
+    }
+    .counter6:before,
+    .counter6:after {
+      display:block;
+      content: counter(wangxiaoer, lower-roman);
+      counter-increment: wangxiaoer;
+    }
+
+    .counter7 {
+      counter-reset: wangxiaoer 2 wangxiaosan 3;
+    }
+    .counter7:before { 
+      content: counter(wangxiaoer) '\A' counter(wangxiaosan);
+      white-space: pre;
+    }
+
+    .reset1 {
+      padding-left: 20px;
+      counter-reset: wangxiaoer;
+      line-height: 1.6;
+      color: #666;
+    }
+    .counter8:before {
+      content: counters(wangxiaoer, '-') '. '; 
+      counter-increment: wangxiaoer; 
+      font-family: arial black;
+    }
+
+    .reset2 { 
+      padding-left: 20px; 
+      counter-reset: wangxiaoer;
+    }
+    .counter9:before { 
+      content: counters(wangxiaoer, '-') '. '; 
+      counter-increment: wangxiaoer;
+    }
+
+    .reset2 ~ .counter9 { 
+        color: #cd0000; 
+    }
+
+    .demo .counter {
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="main">
+	<h1>CSS计数器counter</h1>
+  <div class="demo">    
+    <p>简单的counter-reset的例子：</p>
+    <p class="counter counter1"></p> 
+  </div>
+
+  <div class="demo">    
+    <p>两个技术名称并存demo：</p>
+    <p class="counter counter2"></p> 
+  </div>
+
+  <div class="demo">    
+    <p>counter-increment设置在自身上：</p>
+    <p class="counter counter3"></p> 
+  </div>
+
+  <div class="demo">    
+    <p>counter-increment直接设置在伪元素上：</p>
+    <p class="counter counter4"></p> 
+  </div>
+
+  <div class="demo">    
+    <p>counter-increment递增机制：</p>
+    <p class="counter counter5"></p> 
+  </div>
+  
+  <div class="demo">    
+    <p>计数器counter()方法style参数：</p>
+    <p class="counter counter6"></p> 
+  </div>
+
+  <div class="demo">    
+    <p>多个counter并存实例：</p>
+    <p class="counter counter7"></p> 
+  </div>
+
+  <div class="demo">
+    <p>计数器counters的string参数：</p>
+    <div class="reset1">
+        <div class="counter8">我是王小二
+            <div class="reset1">
+                <div class="counter8">我是王小二的大儿子</div>
+                <div class="counter8">我是王小二的二儿子
+                    <div class="reset1">
+                        <div class="counter8">我是王小二的二儿子的大孙子</div>
+                        <div class="counter8">我是王小二的二儿子的二孙子</div>
+                        <div class="counter8">我是王小二的二儿子的小孙子</div>
+                    </div>
+                </div>
+                <div class="counter8">我是王小二的三儿子</div>
+            </div>
+        </div>
+        <div class="counter8">我是王小三</div>
+        <div class="counter8">我是王小四
+            <div class="reset1">
+                <div class="counter8">我是王小四的大儿子</div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="demo">
+    <p>计数器counters列表被reset乱入：</p>
+    <div class="reset2">
+        <div class="counter9">我是王小二</div>
+        <div class="reset2">
+            <div class="counter9">我是王小二的大儿子</div>
+            <div class="counter9">我是王小二的二儿子</div>
+            <div class="reset2">
+                <div class="counter9">我是王小二的二儿子的大孙子</div>
+                <div class="counter9">我是王小二的二儿子的二孙子</div>
+                <div class="counter9">我是王小二的二儿子的小孙子</div>
+            </div>
+            <div class="counter9">我是王小二的三儿子</div>
+        </div>
+        <div class="counter9">我是王小三</div>
+        <div class="counter9">我是王小四</div>
+        <div class="reset2">
+            <div class="counter9">我是王小四的大儿子</div>
+        </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html> 
