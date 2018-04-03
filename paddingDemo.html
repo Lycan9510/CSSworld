@@ -1,0 +1,96 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="description" content="padding" />
+	<meta name="keywords" content="" />
+	<meta name="author" content="lycan" />
+	<title>padding</title>
+	<style>
+	.demo{
+		margin: 30px;
+	}
+
+	/*demo1*/
+	.demo1 a {
+	    padding: 20px;
+	    background-color: #cd0000;
+	    color: #fff;
+	}
+	
+	/*demo2*/
+	.demo2 a + a:before {
+	    content: "";
+	    font-size: 0;
+	    padding: 10px 3px 1px;
+	    margin-left: 6px;
+	    border-left: 1px solid gray;
+	}
+	
+	/*demo3*/
+	.box { 
+	    padding: 10% 50%;
+	    position: relative;
+	}
+	.box > img {
+	    position: absolute;
+	    width: 100%; height: 100%;
+	    left: 0; top: 0;
+	}
+	
+	/*demo4*/
+	.icon-menu {
+	    display: inline-block;
+	    width: 140px; height: 10px;
+	    padding: 35px 0;
+	    border-top: 10px solid;
+	    border-bottom: 10px solid;
+	    background-color: currentColor;
+	    background-clip: content-box;
+	}
+	.icon-dot {
+	    display: inline-block;
+	    width: 100px; height: 100px;
+	    padding: 10px;
+	    border: 10px solid;    
+	    border-radius: 50%;
+	    background-color: currentColor;
+	    background-clip: content-box;
+	}
+
+	</style>
+</head>
+
+<body>
+<div class="header"></div>
+<div class="main">
+    <div class="demo demo1">
+    	<h3>展示：</h3>
+    	<a href="">链接</a>
+    </div>
+
+    <div class="demo demo2">
+    	<h3>高度可控的分隔线：</h3>         
+        <a href="">登录</a><a href="">注册</a>
+    </div>
+	
+	<div class="demo demo3">
+		<h3>百分比padding值与等比例头图：</h3>
+		<div class="box">
+		    <img src="./img/cover.jpg">
+		</div>
+	</div>
+	
+	<div class="demo demo4">
+		<h3>图形生成：</h3>
+		<i class="icon-menu"></i>
+		<i class="icon-dot"></i>
+	</div>
+</div>       
+
+</body>
+</html> 
